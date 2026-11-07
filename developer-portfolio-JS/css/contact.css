@@ -1,0 +1,43 @@
+.contact-main {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-content h1 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.contact-content a {
+  font-size: 24px;
+  font-weight: 600;
+
+  background: linear-gradient(
+    90deg,
+    var(--blue-color),
+    var(--purple-color)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .contact-content h1 {
+    font-size: 48px;
+  }
+
+  .contact-content a {
+    font-size: 40px;
+  }
+}
