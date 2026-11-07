@@ -1,113 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About | Developer Portfolio</title>
+    <title>About | Developer Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/about.css">
+    <script src="js/cv.js" defer></script>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="container header-content">
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <div class="container header-content">
 
-      <a class="logo" href="index.html">
-        &lt;AS/&gt;
-      </a>
+            <a class="logo" href="index.html">
+                &lt;AS/&gt;
+            </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tech-stack.html">Tech Stack</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="tech-stack.html">Tech Stack</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-    </div>
-  </header>
+        </div>
+    </header>
 
-  <main>
-    <div class="container about-content">
+    <!-- Main content -->
+    <main>
+        <div class="container about-content">
 
-      <section>
-        <h1>About Me</h1>
+            <!-- About me -->
+            <section>
+                <h1>About Me</h1>
 
-        <p>
-          I am a beginner web development student. I enjoy learning
-          HTML and CSS and turning designs into real websites.
-          My goal is to improve my frontend skills and later work
-          with fullstack development.
-        </p>
-      </section>
+                <p>
+                    I am a beginner web development student.
+                    I enjoy learning HTML, CSS and JavaScript
+                    and turning designs into real websites.
+                    My goal is to improve my frontend skills
+                    and later work with fullstack development.
+                </p>
+            </section>
 
-      <section>
-        <h2>Work Experience</h2>
+            <!-- Work experience from JSON -->
+            <section aria-labelledby="experience-heading">
 
-        <article class="experience-item">
-          <div class="experience-top">
-            <h3>Care Assistant</h3>
-            <span>Part time</span>
-          </div>
+                <h2 id="experience-heading">Work Experience</h2>
 
-          <p>Home care, Järfälla</p>
-        </article>
+                <!-- JavaScript generates work experience here -->
+                <ul id="experience-list" class="cv-list" aria-live="polite">
+                    <li>Loading work experience...</li>
+                </ul>
 
-        <article class="experience-item">
-          <div class="experience-top">
-            <h3>Web Development Student</h3>
-            <span>Student</span>
-          </div>
+            </section>
 
-          <p>Chas Academy, Stockholm</p>
-        </article>
-      </section>
+            <!-- Education from JSON -->
+            <section aria-labelledby="education-heading">
 
-      <section>
-        <h2>Education</h2>
+                <h2 id="education-heading">Education</h2>
 
-        <article class="experience-item">
-          <div class="experience-top">
-            <h3>Fullstack JavaScript</h3>
-            <span>Ongoing</span>
-          </div>
+                <!-- JavaScript generates education here -->
+                <ul id="education-list" class="cv-list" aria-live="polite">
+                    <li>Loading education...</li>
+                </ul>
 
-          <p>Chas Academy, 2026 - present</p>
-        </article>
-      </section>
+            </section>
 
-    </div>
-  </main>
+        </div>
+    </main>
 
-  <footer class="site-footer">
-  <div class="container footer-content">
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
 
-    <p>
-      Designed and built by
-      <span>Alperen Sen</span>
-      with Love &amp; Coffee
-    </p>
+            <p>
+                Designed and built by
+                <span>Alperen Sen</span>
+                with Love &amp; Coffee
+            </p>
 
-    <div class="footer-links">
-      <a href="https://github.com/" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-    </div>
+            <div class="footer-links">
+                <a href="https://github.com/Alperen-tech"
+                   target="_blank"
+                   rel="noopener noreferrer">GitHub</a>
 
-  </div>
-</footer>
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">LinkedIn</a>
+            </div>
+
+        </div>
+    </footer>
 
 </body>
 </html>

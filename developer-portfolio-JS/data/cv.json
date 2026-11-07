@@ -7,11 +7,6 @@
       "period": "2026 - Pågående"
     },
     {
-      "school": "Nackademin",
-      "program": "Frontendutvecklare",
-      "period": "2024 - 2026"
-    },
-    {
       "school": "Komvux",
       "program": "Svenska som andraspråk 3 och Engelska 6",
       "period": "Tidigare studier"
@@ -23,18 +18,19 @@
       "role": "Vårdbiträde",
       "period": "Pågående",
       "description": "Arbetar med omsorg, service och stöd till äldre."
-    },
-    {
-      "company": "Webster AB",
-      "role": "Butiksmedarbetare",
-      "period": "2018 - 2022",
-      "description": "Arbetade med kundservice och butiksarbete."
-    },
+    },   
     {
       "company": "Atila Sweden AB",
       "role": "Lagermedarbetare",
       "period": "2019",
       "description": "Arbetade med lagerhantering och logistik."
+    },
+    {
+      "company": "Webster AB",
+      "role": "Butiksmedarbetare",
+      "period": "2018",
+      "description": "Arbetade med kundservice och butiksarbete."
     }
+ 
   ]
 }
