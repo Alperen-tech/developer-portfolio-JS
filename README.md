@@ -17,7 +17,7 @@ Portfolion är skapad med HTML, CSS och JavaScript.
 ## Länkar
 **GitHub:** [https://github.com/Alperen-tech/developer-portfolio-JS](https://github.com/Alperen-tech/developer-portfolio-JS)
 
-**Publicerad sida:**
+**Publicerad sida:** https://alperen-tech.github.io/developer-portfolio-JS/
 
 ---
 
