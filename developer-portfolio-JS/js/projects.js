@@ -1,7 +1,12 @@
+
 const projectsList = document.querySelector("#projects-list");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
 // GitHub API address for our public repositories.
 const githubURL = "https://api.github.com/users/Alperen-tech/repos?per_page=100";
+
+// Store repositories after fetching them.
+let allProjects = [];
 
 // Displays a message inside the project list.
 function showMessage(message) {
@@ -46,9 +51,50 @@ function renderProjects(repos) {
     });
 }
 
+// Filters repositories by programming language.
+function filterProjects(language) {
+    // Show all projects or only projects matching the language.
+    const filteredProjects = language === "all"
+        ? allProjects
+        : allProjects.filter((repo) => repo.language === language);
+
+    // Display a message if no repositories match.
+    if (filteredProjects.length === 0) {
+        showMessage("No projects found for this filter.");
+        return;
+    }
+
+    // Display filtered repositories.
+    renderProjects(filteredProjects);
+}
+
+// Listen for clicks on the filter buttons.
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        // Get the selected filter from the HTML data-filter attribute.
+        const selectedFilter = button.dataset.filter;
+
+        // Update which button is active.
+        filterButtons.forEach((btn) => {
+            const isActive = btn === button;
+
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-pressed", String(isActive));
+        });
+
+        // Display projects matching the selected filter.
+        filterProjects(selectedFilter);
+    });
+});
+
 // Fetch repositories from GitHub API.
 async function loadProjects() {
     showMessage("Loading projects...");
+
+    // Disable filters until the repositories have loaded.
+    filterButtons.forEach((button) => {
+        button.disabled = true;
+    });
 
     try {
         const response = await fetch(githubURL, {
@@ -57,7 +103,7 @@ async function loadProjects() {
             }
         });
 
-        // Check HTTP response.
+        // Check the HTTP response.
         if (!response.ok) {
             throw new Error(`GitHub API error: ${response.status}`);
         }
@@ -70,14 +116,22 @@ async function loadProjects() {
             throw new Error("Invalid GitHub data");
         }
 
+        // Store the repositories for filtering.
+        allProjects = repos;
+
         // Handle an empty repository list.
-        if (repos.length === 0) {
+        if (allProjects.length === 0) {
             showMessage("No projects available yet.");
             return;
         }
 
-        // Generate the project cards.
-        renderProjects(repos);
+        // Enable the filter buttons.
+        filterButtons.forEach((button) => {
+            button.disabled = false;
+        });
+
+        // Display all repositories initially.
+        filterProjects("all");
 
     } catch (error) {
         console.error("Failed to load projects:", error);

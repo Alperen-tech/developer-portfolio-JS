@@ -170,3 +170,45 @@
     width: calc(33.333% - 20px);
   }
 }
+
+---------------------------------------------------------------
+
+/* Project filter buttons */
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
